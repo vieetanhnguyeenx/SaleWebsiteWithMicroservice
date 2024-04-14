@@ -1,24 +1,17 @@
-package com.nva.ProductService.entity;
+package com.nva.ProductService.dto.response;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
-
-@EntityScan
 @Data
-@Document
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Product {
-    @Id
+public class ProductDTOResponse {
     String id;
     String name;
     String description;

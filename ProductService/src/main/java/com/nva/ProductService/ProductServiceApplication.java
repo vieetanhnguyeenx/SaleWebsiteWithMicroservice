@@ -4,20 +4,19 @@ import com.nva.ProductService.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
-public class ProductServiceApplication implements CommandLineRunner {
+@EnableMongoRepositories(basePackages = {"com.nva.ProductService.repository"})
+public class ProductServiceApplication {
 
-	@Autowired
-	private ProductRepository repository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductServiceApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-
-	}
 }
