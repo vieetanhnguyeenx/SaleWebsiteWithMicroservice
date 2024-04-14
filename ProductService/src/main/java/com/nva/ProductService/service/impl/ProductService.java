@@ -12,6 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -27,5 +30,13 @@ public class ProductService implements IProductService {
         product = productRepository.save(product);
         log.info("Product is saved " + product.getId());
         return mapper.map(product, ProductDTOResponse.class);
+    }
+
+    @Override
+    public List<ProductDTOResponse> getAllProduct() {
+        return productRepository.findAll()
+                .stream()
+                .map(product -> mapper.map(product, ProductDTOResponse.class))
+                .collect(Collectors.toList());
     }
 }

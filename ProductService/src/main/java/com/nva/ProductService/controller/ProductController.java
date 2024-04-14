@@ -38,4 +38,10 @@ public class ProductController {
         }
         return productService.createProduct(request);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductDTOResponse> getAllProduct(){
+        return productService.getAllProduct();
+    }
 }
