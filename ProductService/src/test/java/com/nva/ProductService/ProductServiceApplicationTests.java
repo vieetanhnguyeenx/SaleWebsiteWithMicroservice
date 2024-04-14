@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class ProductServiceApplicationTests {
 
 	@Container
-	static GenericContainer mongoDBContainer = new MongoDBContainer("mongo:7.0.8").withExposedPorts(27017);
+	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:7.0.8");
 
 	@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 	@Autowired
@@ -40,11 +40,7 @@ class ProductServiceApplicationTests {
 
 	@DynamicPropertySource
 	static void setProperties(DynamicPropertyRegistry properties){
-		properties.add("spring.data.mongodb.uri", () -> {
-			String address = mongoDBContainer.getContainerIpAddress();
-			Integer port = mongoDBContainer.getMappedPort(27017);
-			return "mongodb://" + address + ":" + port + "product-service";
-		});
+		properties.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
 	}
 
 	@Test
