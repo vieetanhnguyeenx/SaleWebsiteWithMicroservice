@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class OrderLineItems {
+public class OrderLineItems extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
