@@ -1,0 +1,14 @@
+com\nva\InventoryService\exception\ApiRequestException.class
+com\nva\InventoryService\entity\BaseEntity.class
+com\nva\InventoryService\InventoryServiceApplication.class
+com\nva\InventoryService\service\IInventoryService.class
+com\nva\InventoryService\exception\GlobalExceptionHandler.class
+com\nva\InventoryService\model\ApiException.class
+com\nva\InventoryService\entity\Inventory.class
+com\nva\InventoryService\entity\Inventory$InventoryBuilder.class
+com\nva\InventoryService\service\iplm\InventoryService.class
+com\nva\InventoryService\repository\InventoryRepository.class
+com\nva\InventoryService\exception\ApiRequestException$ApiRequestExceptionBuilder.class
+com\nva\InventoryService\config\ModelMapperConfig.class
+com\nva\InventoryService\model\ApiException$ApiExceptionBuilder.class
+com\nva\InventoryService\controller\InventoryController.class

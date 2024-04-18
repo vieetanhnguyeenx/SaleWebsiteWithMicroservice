@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nva.OrderService.OrderServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.824 s -- in com.nva.OrderService.OrderServiceApplicationTests
