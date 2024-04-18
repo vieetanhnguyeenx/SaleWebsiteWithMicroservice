@@ -23,6 +23,7 @@ public class OrderLineItems extends BaseEntity {
     Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "order_id", nullable = false)
     Order order;
+
 }

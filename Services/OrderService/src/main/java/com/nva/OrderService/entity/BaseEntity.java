@@ -1,5 +1,6 @@
 package com.nva.OrderService.entity;
 
+import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import lombok.*;
@@ -12,12 +13,12 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@EntityScan
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
     @CreatedDate
